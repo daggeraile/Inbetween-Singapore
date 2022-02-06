@@ -39,6 +39,6 @@ if max_card != min_card:
     st.write(f'### Tiang probability: {tiang_probability}%')
 
 else:
-    st.write(0)
-    st.write(round((12*4)/50*100,1))
-    st.write(round(2/50*100,1))
+    st.write(f'### Win probability: 0.0%')
+    st.write(f'### Outside probability: {round((12*4)/50*100,1)}%')
+    st.write(f'### Tiang probability: {round(2/50*100,1)}%')
