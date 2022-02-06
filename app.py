@@ -51,81 +51,81 @@ else:
     st.write(f'### Outside probability: {round((12*4)/50*100,1)}%')
     st.write(f'### Tiang probability: {round(2/50*100,1)}%')
 
-st.write("\n")
+# st.write("\n")
 
-st.markdown("## Let\'s practice")
-
-
-test_dict = {
-1:'A',
-2:'2',
-3:'3',
-4:'4',
-5:'5',
-6:'6',
-7:'7',
-8:'8',
-9:'9',
-10:'10',
-11:'J',
-12:'Q',
-13:'K'
-}
-
-left_post, next_card, right_post = st.columns(3)
-bet, skip = st.columns(2)
-left_post.markdown(f'### Left')
-right_post.markdown(f'### Right')
-next_card.markdown(f'### Next')
+# st.markdown("## Let\'s practice")
 
 
+# test_dict = {
+# 1:'A',
+# 2:'2',
+# 3:'3',
+# 4:'4',
+# 5:'5',
+# 6:'6',
+# 7:'7',
+# 8:'8',
+# 9:'9',
+# 10:'10',
+# 11:'J',
+# 12:'Q',
+# 13:'K'
+# }
 
-left_test = randint(1,13)
-right_test = randint(1,13)
+# left_post, next_card, right_post = st.columns(3)
+# bet, skip = st.columns(2)
+# left_post.markdown(f'### Left')
+# right_post.markdown(f'### Right')
+# next_card.markdown(f'### Next')
 
-min_test = min(left_test, right_test)
-max_test = max(left_test, right_test)
 
-# displaying left and right card
-sleep(1)
-left_post.write(f'## {test_dict[min_test]}')
-sleep(1)
-right_post.write(f'## {test_dict[max_test]}')
 
-# predicting the third card
-deck = [1,2,3,4,5,6,7,8,9,10,11,12,13,
-        1,2,3,4,5,6,7,8,9,10,11,12,13,
-        1,2,3,4,5,6,7,8,9,10,11,12,13,
-        1,2,3,4,5,6,7,8,9,10,11,12,13]
+# left_test = randint(1,13)
+# right_test = randint(1,13)
 
-deck.remove(min_test)
-deck.remove(max_test)
+# min_test = min(left_test, right_test)
+# max_test = max(left_test, right_test)
 
-third_int = randint(0,49)
-third_card = test_dict[deck[third_int]]
+# # displaying left and right card
+# sleep(1)
+# left_post.write(f'## {test_dict[min_test]}')
+# sleep(1)
+# right_post.write(f'## {test_dict[max_test]}')
 
-def display_third_bet():
-    next_card.markdown(f'## {third_card}')
-    if deck[third_int] < max_test and deck[third_int] > min_test:
-        next_card.markdown("<p style='color:Green;'>WIN</p>", unsafe_allow_html=True)
-    elif deck[third_int] == max_test or deck[third_int] == min_test:
-        next_card.markdown("<p style='color:Green;'>TIANG</p>", unsafe_allow_html=True)
-    else:
-        next_card.markdown("<p style='color:Green;'>LOSE</p>", unsafe_allow_html=True)
+# # predicting the third card
+# deck = [1,2,3,4,5,6,7,8,9,10,11,12,13,
+#         1,2,3,4,5,6,7,8,9,10,11,12,13,
+#         1,2,3,4,5,6,7,8,9,10,11,12,13,
+#         1,2,3,4,5,6,7,8,9,10,11,12,13]
+
+# deck.remove(min_test)
+# deck.remove(max_test)
+
+# third_int = randint(0,49)
+# third_card = test_dict[deck[third_int]]
+
+# def display_third_bet():
+#     next_card.markdown(f'## {third_card}')
+#     if deck[third_int] < max_test and deck[third_int] > min_test:
+#         next_card.markdown("<p style='color:Green;'>WIN</p>", unsafe_allow_html=True)
+#     elif deck[third_int] == max_test or deck[third_int] == min_test:
+#         next_card.markdown("<p style='color:Green;'>TIANG</p>", unsafe_allow_html=True)
+#     else:
+#         next_card.markdown("<p style='color:Green;'>LOSE</p>", unsafe_allow_html=True)
     
 
-    sleep(1)
+#     sleep(1)
 
-def display_third_pass():
-    next_card.markdown(f'## {third_card}')
-    next_card.markdown("<p style='color=Green;'>---</p>", unsafe_allow_html=True)
+# def display_third_pass():
+#     next_card.markdown(f'## {third_card}')
+#     next_card.markdown("<p style='color=Green;'>---</p>", unsafe_allow_html=True)
 
 
-left_blank, left_button, right_button, right_blank = st.columns(4)
+# left_blank, left_button, right_button, right_blank = st.columns(4)
 
-bet_button = left_button.button('bet', key='bet', on_click=display_third_bet)
-pass_button = right_button.button('pass', key='pass', on_click=display_third_pass)
-sleep(1)
+# bet_button = left_button.button('bet', key='bet', on_click=display_third_bet)
+# pass_button = right_button.button('pass', key='pass', on_click=display_third_pass)
+# sleep(1)
 
 # st.session_state['value'] = 
 
